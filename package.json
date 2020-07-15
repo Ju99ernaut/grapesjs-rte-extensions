@@ -1,0 +1,27 @@
+{
+  "name": "grapesjs-rte-extensions",
+  "version": "1.0.1",
+  "description": "Grapesjs built-in rte extension",
+  "main": "dist/grapesjs-rte-extensions.min.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Ju99ernaut/grapesjs-rte-extensions.git"
+  },
+  "scripts": {
+    "start": "grapesjs-cli serve",
+    "build": "grapesjs-cli build",
+    "build:css": "node-sass src/styles.scss dist/grapesjs-rte-extensions.min.css --output-style compressed",
+    "bump": "npm version patch -m 'Bump v%s'"
+  },
+  "keywords": [
+    "grapesjs",
+    "plugin",
+    "rte"
+  ],
+  "devDependencies": {
+    "grapesjs-cli": "^1.0.12",
+    "node-sass": "^4.14.1"
+  },
+  "authour": "Brendon Ngirazi",
+  "license": "MIT"
+}
