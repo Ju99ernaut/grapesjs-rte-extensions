@@ -145,8 +145,8 @@ export default (editor, opts = {}) => {
       title: 'Font Highlight'
     },
     result: rte => {
-      if (!pk2) pk2 = new Piklor("#hilite-picker", options.fonts.fontColor ?
-        (Array.isArray(options.fonts.fontColor) ? options.fonts.fontColor : null) : null, {
+      if (!pk2) pk2 = new Piklor("#hilite-picker", options.fonts.hilite ?
+        (Array.isArray(options.fonts.hilite) ? options.fonts.hilite : null) : null, {
           open: "span#rte-font-hilite.gjs-rte-action",
           closeOnBlur: true
         });
