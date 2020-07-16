@@ -178,10 +178,10 @@ rteEl.firstChild.childNodes.forEach((child, idx) => child.style.order = order[id
 ```
 
 <p align="center">
-  <img src="rte-before.png" alt="rte-before.png">
+  <img src="rte-before.PNG" alt="rte-before.png">
 </p>
 <p align="center">
-  <img src="rte-reorder.png" alt="rte-reorder.png">
+  <img src="rte-reorder.PNG" alt="rte-reorder.png">
 </p>
 
 
