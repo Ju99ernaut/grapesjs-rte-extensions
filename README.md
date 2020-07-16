@@ -3,7 +3,7 @@
 Some useful actions supported by the `grapesjs` built-in rich text editor but not implemented by default
 
 <p align="center">
-  <img src="demo.png" alt="demo.png">
+  <img src="demo2.png" alt="demo2.png">
 </p>
 
 ### HTML
@@ -56,7 +56,8 @@ Set section to `false` to disable completely
 | `actions` | Copy, cut, paste and delete buttons | `false` |
 | `extra` | Code and horizontal line buttons | `false` |
 | `undoredo` | undo and redo buttons | `false` |
-| `order` | `NB not yet implemented.` Order of the above sections after `base` section, use "/" for `newline`, for now you can't rearrange the buttons inside the sections | `['format', 'subscriptSuperscript', 'indentOutdent', 'list', 'align', 'actions', 'undoredo', 'extra']` |
+| `darkColorPicker` | Set color picker to darkmode | `true` |
+| `maxWidth` | maximum-width before buttons move to next row, the default width fits the 16 default buttons | `600px` |
 
 
 
@@ -134,8 +135,8 @@ Directly in the browser
           actions: false,//|true
           undoredo: false,//|true
           extra: false,//|true
-          //"/" to insert line break
-          order: ['format', 'subscriptSuperscript', 'indentOutdent', 'list', 'align', 'actions', 'undoredo', 'extra'],
+          darkColorPicker: true,//|false
+          maxWidth: '600px'
         }
       }
   });
@@ -162,6 +163,26 @@ const editor = grapesjs.init({
   ],
 });
 ```
+
+Rearranging the buttons example
+
+#### JS
+
+```js
+const rteEl = editor.RichTextEditor.getToolbarEl();
+//By default there are 16 buttons, index them from 0 to 15
+//og position [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15]
+//             |  |  |  |  |  |   \  \  \   \   \   \   \  \  \   |  Move to position in second array
+const order = [0, 1, 2, 3, 4, 14, 15, 9, 10, 11, 12, 13, 5, 6, 7, 8];
+rteEl.firstChild.childNodes.forEach((child, idx) => child.style.order = order[idx]);
+```
+
+<p align="center">
+  <img src="rte-before.png" alt="rte-before.png">
+</p>
+<p align="center">
+  <img src="rte-reorder.png" alt="rte-reorder.png">
+</p>
 
 
 

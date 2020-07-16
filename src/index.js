@@ -47,8 +47,7 @@ export default (editor, opts = {}) => {
       actions: false,
       undoredo: false,
       extra: false,
-      //"/" to insert line break
-      order: ['base', 'format', 'subscriptSuperscript', 'indentOutdent', 'list', 'align', 'actions', 'undoredo', 'extra'],
+      darkColorPicker: true,
     },
     ...opts
   };
@@ -56,7 +55,8 @@ export default (editor, opts = {}) => {
   const formatBlock = 'formatBlock';
 
   const rte = editor.RichTextEditor;
-  const rteEl = rte.getToolbarEl();
+  if (options.maxWidth)
+    rte.getToolbarEl().firstChild.style.maxWidth = options.maxWidth;
 
   const fontNames = options.fonts.fontName ?
     (Array.isArray(options.fonts.fontName) ? options.fonts.fontName : false) : false;
@@ -121,8 +121,10 @@ export default (editor, opts = {}) => {
   });
   let pk1 = null;
   options.fonts && options.fonts.fontColor && rte.add('fontColor', {
-    icon: `<b><u>A</u></b>
-      <div id="foreColor-picker" class="color-picker"></div>`,
+    icon: `<b style="pointer-events: none"><u>A</u></b>
+      <div id="foreColor-picker" 
+          class="${options.darkColorPicker ? 'rte-color-picker-dark rte-color-picker' : 'rte-color-picker-light rte-color-picker'}">
+      </div>`,
     attributes: {
       id: 'rte-font-color',
       title: 'Font Color'
@@ -138,8 +140,10 @@ export default (editor, opts = {}) => {
   });
   let pk2 = null;
   options.fonts && options.fonts.hilite && rte.add('hiliteColor', {
-    icon: `<b style="padding:2px 4px; background-color: rgba(0,0,0,0.2)">A</b>
-      <div id="hilite-picker" class="color-picker"></div>`,
+    icon: `<b style="pointer-events: none;" class="rte-hilite-btn">A</b>
+      <div id="hilite-picker" 
+        class="${options.darkColorPicker ? 'rte-color-picker-dark rte-color-picker' : 'rte-color-picker-light rte-color-picker'}">
+      </div>`,
     attributes: {
       id: 'rte-font-hilite',
       title: 'Font Highlight'
