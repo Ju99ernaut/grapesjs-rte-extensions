@@ -121,7 +121,7 @@ export default (editor, opts = {}) => {
   });
   let pk1 = null;
   options.fonts && options.fonts.fontColor && rte.add('fontColor', {
-    icon: `<b style="pointer-events: none"><u>A</u></b>
+    icon: `<b style="pointer-events:none;border-bottom:2px solid">A</b>
       <div id="foreColor-picker" 
           class="${options.darkColorPicker ? 'rte-color-picker-dark rte-color-picker' : 'rte-color-picker-light rte-color-picker'}">
       </div>`,
@@ -140,7 +140,7 @@ export default (editor, opts = {}) => {
   });
   let pk2 = null;
   options.fonts && options.fonts.hilite && rte.add('hiliteColor', {
-    icon: `<b style="pointer-events: none;" class="rte-hilite-btn">A</b>
+    icon: `<b style="pointer-events:none;" class="rte-hilite-btn">A</b>
       <div id="hilite-picker" 
         class="${options.darkColorPicker ? 'rte-color-picker-dark rte-color-picker' : 'rte-color-picker-light rte-color-picker'}">
       </div>`,
@@ -158,42 +158,42 @@ export default (editor, opts = {}) => {
     },
   });
   options.format && options.format.heading1 && rte.add('heading1', {
-    icon: '<b>H<sub>1</sub></b>',
+    icon: '<p>H1</p>',
     attributes: {
       title: 'Heading 1'
     },
     result: rte => rte.exec(formatBlock, '<h1>')
   });
   options.format && options.format.heading2 && rte.add('heading2', {
-    icon: '<b>H<sub>2</sub></b>',
+    icon: '<p>H2</p>',
     attributes: {
       title: 'Heading 2'
     },
     result: rte => rte.exec(formatBlock, '<h2>')
   });
   options.format && options.format.heading3 && rte.add('heading3', {
-    icon: '<b>H<sub>3</sub></b>',
+    icon: '<p>H3</p>',
     attributes: {
       title: 'Heading 3'
     },
     result: rte => rte.exec(formatBlock, '<h3>')
   });
   options.format && options.format.heading4 && rte.add('heading4', {
-    icon: '<b>H<sub>4</sub></b>',
+    icon: '<p>H4</p>',
     attributes: {
       title: 'Heading 4'
     },
     result: rte => rte.exec(formatBlock, '<h4>')
   });
   options.format && options.format.heading5 && rte.add('heading5', {
-    icon: '<b>H<sub>5</sub></b>',
+    icon: '<p>H5</p>',
     attributes: {
       title: 'Heading 5'
     },
     result: rte => rte.exec(formatBlock, '<h5>')
   });
   options.format && options.format.heading6 && rte.add('heading6', {
-    icon: '<b>H<sub>6</sub></b>',
+    icon: '<p>H6</p>',
     attributes: {
       title: 'Heading 6'
     },
@@ -235,14 +235,14 @@ export default (editor, opts = {}) => {
     result: rte => rte.exec('outdent')
   });
   options.subscriptSuperscript && rte.add('subscript', {
-    icon: '<b>X<sub>2</sub></b>',
+    icon: '<p>X<sub>2</sub></p>',
     attributes: {
       title: 'Subscript'
     },
     result: rte => rte.exec('subscript')
   });
   options.subscriptSuperscript && rte.add('superscript', {
-    icon: '<b>X<sup>2</sup></b>',
+    icon: '<p>X<sup>2</sup></p>',
     attributes: {
       title: 'Superscript'
     },
