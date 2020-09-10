@@ -47,7 +47,8 @@ export default (editor, opts = {}) => {
       actions: false,
       undoredo: false,
       extra: false,
-      darkColorPicker: true,
+      icons: {},
+      darkColorPicker: true
     },
     ...opts
   };
@@ -121,7 +122,7 @@ export default (editor, opts = {}) => {
   });
   let pk1 = null;
   options.fonts && options.fonts.fontColor && rte.add('fontColor', {
-    icon: `<b style="pointer-events:none;border-bottom:2px solid">A</b>
+    icon: `${icons.fontColor || '<b style="pointer-events:none;border-bottom:2px solid">A</b>'}
       <div id="foreColor-picker" 
           class="${options.darkColorPicker ? 'rte-color-picker-dark rte-color-picker' : 'rte-color-picker-light rte-color-picker'}">
       </div>`,
@@ -140,7 +141,7 @@ export default (editor, opts = {}) => {
   });
   let pk2 = null;
   options.fonts && options.fonts.hilite && rte.add('hiliteColor', {
-    icon: `<b style="pointer-events:none;" class="rte-hilite-btn">A</b>
+    icon: `${icons.hiliteColor || '<b style="pointer-events:none;" class="rte-hilite-btn">A</b>'}
       <div id="hilite-picker" 
         class="${options.darkColorPicker ? 'rte-color-picker-dark rte-color-picker' : 'rte-color-picker-light rte-color-picker'}">
       </div>`,
@@ -158,189 +159,189 @@ export default (editor, opts = {}) => {
     },
   });
   options.format && options.format.heading1 && rte.add('heading1', {
-    icon: '<p>H1</p>',
+    icon: icons.heading1 || '<p>H1</p>',
     attributes: {
       title: 'Heading 1'
     },
     result: rte => rte.exec(formatBlock, '<h1>')
   });
   options.format && options.format.heading2 && rte.add('heading2', {
-    icon: '<p>H2</p>',
+    icon: icons.heading2 || '<p>H2</p>',
     attributes: {
       title: 'Heading 2'
     },
     result: rte => rte.exec(formatBlock, '<h2>')
   });
   options.format && options.format.heading3 && rte.add('heading3', {
-    icon: '<p>H3</p>',
+    icon: icons.heading3 || '<p>H3</p>',
     attributes: {
       title: 'Heading 3'
     },
     result: rte => rte.exec(formatBlock, '<h3>')
   });
   options.format && options.format.heading4 && rte.add('heading4', {
-    icon: '<p>H4</p>',
+    icon: icons.heading4 || '<p>H4</p>',
     attributes: {
       title: 'Heading 4'
     },
     result: rte => rte.exec(formatBlock, '<h4>')
   });
   options.format && options.format.heading5 && rte.add('heading5', {
-    icon: '<p>H5</p>',
+    icon: icons.heading5 || '<p>H5</p>',
     attributes: {
       title: 'Heading 5'
     },
     result: rte => rte.exec(formatBlock, '<h5>')
   });
   options.format && options.format.heading6 && rte.add('heading6', {
-    icon: '<p>H6</p>',
+    icon: icons.heading6 || '<p>H6</p>',
     attributes: {
       title: 'Heading 6'
     },
     result: rte => rte.exec(formatBlock, '<h6>')
   });
   options.format && options.format.paragraph && rte.add('paragraph', {
-    icon: '&#182;',
+    icon: icons.paragraph || '&#182;',
     attributes: {
       title: 'Paragraph'
     },
     result: rte => rte.exec(formatBlock, '<p>')
   });
   options.format && options.format.quote && rte.add('quote', {
-    icon: '<i class="fa fa-quote-left"></i>',
+    icon: icons.quote || '<i class="fa fa-quote-left"></i>',
     attributes: {
       title: 'Quote'
     },
     result: rte => rte.exec(formatBlock, '<blockquote>')
   });
   options.format && options.format.clearFormatting && rte.add('clearFormatting', {
-    icon: '<i class="fa fa-eraser"></i>',
+    icon: icons.clear || '<i class="fa fa-eraser"></i>',
     attributes: {
       title: 'Clear Formatting'
     },
     result: rte => rte.exec('removeFormat')
   });
   options.indentOutdent && rte.add('indent', {
-    icon: '<i class="fa fa-indent"></i>',
+    icon: icons.indent || '<i class="fa fa-indent"></i>',
     attributes: {
       title: 'Indent'
     },
     result: rte => rte.exec('indent')
   });
   options.indentOutdent && rte.add('outdent', {
-    icon: '<i class="fa fa-outdent"></i>',
+    icon: icons.outdent || '<i class="fa fa-outdent"></i>',
     attributes: {
       title: 'Outdent'
     },
     result: rte => rte.exec('outdent')
   });
   options.subscriptSuperscript && rte.add('subscript', {
-    icon: '<p>X<sub>2</sub></p>',
+    icon: icons.subscript || '<p>X<sub>2</sub></p>',
     attributes: {
       title: 'Subscript'
     },
     result: rte => rte.exec('subscript')
   });
   options.subscriptSuperscript && rte.add('superscript', {
-    icon: '<p>X<sup>2</sup></p>',
+    icon: icons.superscript || '<p>X<sup>2</sup></p>',
     attributes: {
       title: 'Superscript'
     },
     result: rte => rte.exec('superscript')
   });
   options.list && rte.add('olist', {
-    icon: '<i class="fa fa-list-ol"></i>',
+    icon: icons.olist || '<i class="fa fa-list-ol"></i>',
     attributes: {
       title: 'Ordered List'
     },
     result: rte => rte.exec('insertOrderedList')
   });
   options.list && rte.add('ulist', {
-    icon: '<i class="fa fa-list-ul"></i>',
+    icon: icons.ulist || '<i class="fa fa-list-ul"></i>',
     attributes: {
       title: 'Unordered List'
     },
     result: rte => rte.exec('insertUnorderedList')
   });
   options.align && rte.add('justifyLeft', {
-    icon: '<i class="fa fa-align-left"></i>',
+    icon: icons.justifyLeft || '<i class="fa fa-align-left"></i>',
     attributes: {
       title: 'Align Left'
     },
     result: rte => rte.exec('justifyLeft')
   });
   options.align && rte.add('justifyCenter', {
-    icon: '<i class="fa fa-align-center"></i>',
+    icon: icons.justifyRight || '<i class="fa fa-align-center"></i>',
     attributes: {
       title: 'Align Center'
     },
     result: rte => rte.exec('justifyCenter')
   });
   options.align && rte.add('justifyFull', {
-    icon: '<i class="fa fa-align-justify"></i>',
+    icon: icons.justifyFull || '<i class="fa fa-align-justify"></i>',
     attributes: {
       title: 'Align Justify'
     },
     result: rte => rte.exec('justifyFull')
   });
   options.align && rte.add('justifyRight', {
-    icon: '<i class="fa fa-align-right"></i>',
+    icon: icons.justifyRight || '<i class="fa fa-align-right"></i>',
     attributes: {
       title: 'Align Right'
     },
     result: rte => rte.exec('justifyRight')
   });
   options.actions && options.actions.copy && rte.add('copy', {
-    icon: '<i class="fa fa-files-o"></i>',
+    icon: icons.copy || '<i class="fa fa-files-o"></i>',
     attributes: {
       title: 'Copy'
     },
     result: rte => rte.exec('copy')
   });
   options.actions && options.actions.cut && rte.add('cut', {
-    icon: '<i class="fa fa-scissors"></i>',
+    icon: icons.cut || '<i class="fa fa-scissors"></i>',
     attributes: {
       title: 'Cut'
     },
     result: rte => rte.exec('cut')
   });
   options.actions && options.actions.paste && rte.add('paste', {
-    icon: '<i class="fa fa-clipboard"></i>',
+    icon: icons.paste || '<i class="fa fa-clipboard"></i>',
     attributes: {
       title: 'Paste'
     },
     result: rte => rte.exec('paste')
   });
   options.actions && options.actions.delete && rte.add('delete', {
-    icon: '<i class="fa fa-trash-o"></i>',
+    icon: icons.delete || '<i class="fa fa-trash-o"></i>',
     attributes: {
       title: 'Delete'
     },
     result: rte => rte.exec('delete')
   });
   options.extra && rte.add('code', {
-    icon: '<i class="fa fa-code"></i>',
+    icon: icon.code || '<i class="fa fa-code"></i>',
     attributes: {
       title: 'Code'
     },
     result: rte => rte.exec(formatBlock, '<pre>')
   });
   options.extra && rte.add('line', {
-    icon: '<b>&#8213;</b>',
+    icon: icons.line || '<b>&#8213;</b>',
     attributes: {
       title: 'Horizontal Line'
     },
     result: rte => rte.exec('insertHorizontalRule')
   });
   options.undoredo && rte.add('undo', {
-    icon: '<i class="fa fa-reply"></i>',
+    icon: icons.undo || '<i class="fa fa-reply"></i>',
     attributes: {
       title: 'Undo'
     },
     result: rte => rte.exec('undo')
   });
   options.undoredo && rte.add('redo', {
-    icon: '<i class="fa fa-share"></i>',
+    icon: icons.redo || '<i class="fa fa-share"></i>',
     attributes: {
       title: 'Redo'
     },
