@@ -57,6 +57,7 @@ Set section to `false` to disable completely
 | `extra` | Code and horizontal line buttons | `false` |
 | `undoredo` | undo and redo buttons | `false` |
 | `darkColorPicker` | Set color picker to darkmode | `true` |
+| `icons` | Custom icons `fontColor, hiliteColor, heading1-6, paragraph, quote, clear, indent, outdent, subscript, superscript, olist, ulist, justifyLeft, justifyRight, justifyCenter, justifyFull, copy, cut, paste, delete, code, line, undo, redo` | `{}` |
 | `maxWidth` | maximum-width before buttons move to next row, the default width fits the 16 default buttons | `600px` |
 
 
