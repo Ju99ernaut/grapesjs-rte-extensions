@@ -20,6 +20,7 @@ export default (editor, opts = {}) => {
       //  hilite: [],
       //}
       fonts: {
+        fontSize: true,
         fontColor: true,
         hilite: true,
       },
@@ -52,6 +53,10 @@ export default (editor, opts = {}) => {
     },
     ...opts
   };
+
+  const {
+    icons
+  } = options;
 
   const formatBlock = 'formatBlock';
 
@@ -97,13 +102,13 @@ export default (editor, opts = {}) => {
   });
   options.fonts && options.fonts.fontSize && rte.add('fontSize', {
     icon: `<select style="height:1.8rem;color:inherit;" class="gjs-field gjs-field-select">
-          <option>1</option>
-          <option>2</option>
-          <option>3</option>
-          <option>4</option>
-          <option>5</option>
-          <option>6</option>
-          <option>7</option>
+          <option value="1">xx-small</option>
+          <option value="2">x-small</option>
+          <option value="3">small</option>
+          <option value="4">medium</option>
+          <option value="5">large</option>
+          <option value="6">x-large</option>
+          <option value="7">xx-large</option>
         </select>`,
     // Bind the 'result' on 'change' listener
     event: 'change',
@@ -159,42 +164,42 @@ export default (editor, opts = {}) => {
     },
   });
   options.format && options.format.heading1 && rte.add('heading1', {
-    icon: icons.heading1 || '<p>H1</p>',
+    icon: icons.heading1 || '<div>H1</div>',
     attributes: {
       title: 'Heading 1'
     },
     result: rte => rte.exec(formatBlock, '<h1>')
   });
   options.format && options.format.heading2 && rte.add('heading2', {
-    icon: icons.heading2 || '<p>H2</p>',
+    icon: icons.heading2 || '<div>H2</div>',
     attributes: {
       title: 'Heading 2'
     },
     result: rte => rte.exec(formatBlock, '<h2>')
   });
   options.format && options.format.heading3 && rte.add('heading3', {
-    icon: icons.heading3 || '<p>H3</p>',
+    icon: icons.heading3 || '<div>H3</div>',
     attributes: {
       title: 'Heading 3'
     },
     result: rte => rte.exec(formatBlock, '<h3>')
   });
   options.format && options.format.heading4 && rte.add('heading4', {
-    icon: icons.heading4 || '<p>H4</p>',
+    icon: icons.heading4 || '<div>H4</div>',
     attributes: {
       title: 'Heading 4'
     },
     result: rte => rte.exec(formatBlock, '<h4>')
   });
   options.format && options.format.heading5 && rte.add('heading5', {
-    icon: icons.heading5 || '<p>H5</p>',
+    icon: icons.heading5 || '<div>H5</div>',
     attributes: {
       title: 'Heading 5'
     },
     result: rte => rte.exec(formatBlock, '<h5>')
   });
   options.format && options.format.heading6 && rte.add('heading6', {
-    icon: icons.heading6 || '<p>H6</p>',
+    icon: icons.heading6 || '<div>H6</div>',
     attributes: {
       title: 'Heading 6'
     },
@@ -236,14 +241,14 @@ export default (editor, opts = {}) => {
     result: rte => rte.exec('outdent')
   });
   options.subscriptSuperscript && rte.add('subscript', {
-    icon: icons.subscript || '<p>X<sub>2</sub></p>',
+    icon: icons.subscript || '<div>X<sub>2</sub></div>',
     attributes: {
       title: 'Subscript'
     },
     result: rte => rte.exec('subscript')
   });
   options.subscriptSuperscript && rte.add('superscript', {
-    icon: icons.superscript || '<p>X<sup>2</sup></p>',
+    icon: icons.superscript || '<div>X<sup>2</sup></div>',
     attributes: {
       title: 'Superscript'
     },
