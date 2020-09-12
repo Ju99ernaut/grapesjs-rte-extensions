@@ -20,7 +20,6 @@ export default (editor, opts = {}) => {
       //  hilite: [],
       //}
       fonts: {
-        fontSize: true,
         fontColor: true,
         hilite: true,
       },
