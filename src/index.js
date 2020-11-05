@@ -128,7 +128,7 @@ export default (editor, opts = {}) => {
   options.fonts && options.fonts.fontColor && rte.add('fontColor', {
     icon: `${icons.fontColor || '<b style="pointer-events:none;border-bottom:2px solid">A</b>'}
       <div id="foreColor-picker" 
-          class="${options.darkColorPicker ? 'rte-color-picker-dark rte-color-picker' : 'rte-color-picker-light rte-color-picker'}">
+          class="${options.darkColorPicker ? 'rte-color-picker dark' : 'rte-color-picker light'}">
       </div>`,
     attributes: {
       id: 'rte-font-color',
@@ -147,7 +147,7 @@ export default (editor, opts = {}) => {
   options.fonts && options.fonts.hilite && rte.add('hiliteColor', {
     icon: `${icons.hiliteColor || '<b style="pointer-events:none;" class="rte-hilite-btn">A</b>'}
       <div id="hilite-picker" 
-        class="${options.darkColorPicker ? 'rte-color-picker-dark rte-color-picker' : 'rte-color-picker-light rte-color-picker'}">
+        class="${options.darkColorPicker ? 'rte-color-picker dark' : 'rte-color-picker light'}">
       </div>`,
     attributes: {
       id: 'rte-font-hilite',
