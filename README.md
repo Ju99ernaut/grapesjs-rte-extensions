@@ -6,6 +6,8 @@ Some useful actions supported by the `grapesjs` built-in rich text editor but no
   <img src="demo2.png" alt="demo2.png">
 </p>
 
+[DEMO](https://codepen.io/ju99ernaut/pen/LYNXYbj)
+
 ### HTML
 ```html
 <link href="https://unpkg.com/grapesjs/dist/css/grapes.min.css" rel="stylesheet">
