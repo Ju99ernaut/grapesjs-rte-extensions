@@ -180,9 +180,14 @@ const order = [0, 1, 2, 3, 4, 14, 15, 9, 10, 11, 12, 13, 5, 6, 7, 8];
 rteEl.firstChild.childNodes.forEach((child, idx) => child.style.order = order[idx]);
 ```
 
+Before:
+
 <p align="center">
   <img src="rte-before.PNG" alt="rte-before.png">
 </p>
+
+After:
+
 <p align="center">
   <img src="rte-reorder.PNG" alt="rte-reorder.png">
 </p>
