@@ -123,7 +123,7 @@ export default (editor, opts = {}) => {
     let pk1 = null;
     options.fonts && options.fonts.fontColor && rte.add('fontColor', {
         icon: `${icons.fontColor || '<b style="pointer-events:none;border-bottom:2px solid">A</b>'}
-      <div id="foreColor-picker" 
+      <div id="foreColor-picker"
           class="${options.darkColorPicker ? 'rte-color-picker dark' : 'rte-color-picker light'}">
       </div>`,
         attributes: {
@@ -142,7 +142,7 @@ export default (editor, opts = {}) => {
     let pk2 = null;
     options.fonts && options.fonts.hilite && rte.add('hiliteColor', {
         icon: `${icons.hiliteColor || '<b style="pointer-events:none;" class="rte-hilite-btn">A</b>'}
-      <div id="hilite-picker" 
+      <div id="hilite-picker"
         class="${options.darkColorPicker ? 'rte-color-picker dark' : 'rte-color-picker light'}">
       </div>`,
         attributes: {
@@ -320,7 +320,7 @@ export default (editor, opts = {}) => {
         result: rte => rte.exec('delete')
     });
     options.extra && rte.add('code', {
-        icon: icon.code || '<i class="fa fa-code"></i>',
+        icon: icons.code || '<i class="fa fa-code"></i>',
         attributes: {
             title: 'Code'
         },
