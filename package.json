@@ -1,6 +1,6 @@
 {
   "name": "grapesjs-rte-extensions",
-  "version": "1.0.5",
+  "version": "1.0.6",
   "description": "Grapesjs built-in rte extension",
   "main": "dist/grapesjs-rte-extensions.min.js",
   "repository": {
