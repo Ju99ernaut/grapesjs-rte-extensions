@@ -37,7 +37,7 @@ export default class Piklor {
         options.style = Object(options.style);
         options.style.display = options.style.display || "block";
         options.closeOnBlur = options.closeOnBlur || false;
-        options.template = options.template || "<div data-col=\"{color}\" style=\"background-color: {color}\"></div>";
+        options.template = options.template || "<div data-col=\"{color}\" style=\"background-color: {color}\" title=\"{color}\" ></div>";
         //self.pick = new Event(event);
         self.elm = self.getElm(sel);
         self.cbs = [];
