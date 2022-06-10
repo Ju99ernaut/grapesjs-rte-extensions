@@ -73,11 +73,13 @@ export default (editor, opts = {}) => {
     </select>`;
 
     //remove defaults if not required
-    !options.base && !options.base.bold && rte.remove('bold');
-    !options.base && !options.base.italic && rte.remove('italic');
-    !options.base && !options.base.underline && rte.remove('underline');
-    !options.base && !options.base.strikethrough && rte.remove('strikethrough');
-    !options.base && !options.base.link && rte.remove('link');
+    if (!options.base || typeof options.base === 'object') {
+        !options.base.bold && rte.remove('bold');
+        !options.base.italic && rte.remove('italic');
+        !options.base.underline && rte.remove('underline');
+        !options.base.strikethrough && rte.remove('strikethrough');
+        !options.base.link && rte.remove('link');
+    }
     options.fonts && options.fonts.fontName && rte.add('fontName', {
         icon: fontNamesEl,
         // Bind the 'result' on 'change' listener
@@ -133,9 +135,9 @@ export default (editor, opts = {}) => {
         result: rte => {
             if (!pk1) pk1 = new Piklor("#foreColor-picker", options.fonts.fontColor ?
                 (Array.isArray(options.fonts.fontColor) ? options.fonts.fontColor : null) : null, {
-                    open: "span#rte-font-color.gjs-rte-action",
-                    closeOnBlur: true
-                });
+                open: "span#rte-font-color.gjs-rte-action",
+                closeOnBlur: true
+            });
             pk1.colorChosen(col => rte.exec('foreColor', col));
         },
     });
@@ -152,9 +154,9 @@ export default (editor, opts = {}) => {
         result: rte => {
             if (!pk2) pk2 = new Piklor("#hilite-picker", options.fonts.hilite ?
                 (Array.isArray(options.fonts.hilite) ? options.fonts.hilite : null) : null, {
-                    open: "span#rte-font-hilite.gjs-rte-action",
-                    closeOnBlur: true
-                });
+                open: "span#rte-font-hilite.gjs-rte-action",
+                closeOnBlur: true
+            });
             pk2.colorChosen(col => rte.exec('hiliteColor', col));
         },
     });
