@@ -157,10 +157,13 @@ export default (editor, opts = {}) => {
           title: "Font Color",
         },
         result: (rte) => {
-          const pikerEle = `#foreColor-picker-${editor.Config.container.replace("#", "")}`;
+          const pikerEle = `#foreColor-picker-${editor.Config.container.replace(
+            "#",
+            ""
+          )}`;
           if (!pk1[pikerEle])
             pk1[pikerEle] = new Piklor(
-              "#foreColor-picker",
+              pikerEle,
               options.fonts.fontColor
                 ? Array.isArray(options.fonts.fontColor)
                   ? options.fonts.fontColor
@@ -194,10 +197,13 @@ export default (editor, opts = {}) => {
           title: "Font Highlight",
         },
         result: (rte) => {
-          const pikerEle = `#hilite-picker-${editor.Config.container.replace("#", "")}`;
+          const pikerEle = `#hilite-picker-${editor.Config.container.replace(
+            "#",
+            ""
+          )}`;
           if (!pk2[pikerEle])
             pk2[pikerEle] = new Piklor(
-              "#hilite-picker",
+              pikerEle,
               options.fonts.hilite
                 ? Array.isArray(options.fonts.hilite)
                   ? options.fonts.hilite
