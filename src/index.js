@@ -137,7 +137,7 @@ export default (editor, opts = {}) => {
           }
         },
       });
-    let pk1 = null;
+    const pk1 = {};
     options.fonts &&
       options.fonts.fontColor &&
       rte.add("fontColor", {
@@ -145,7 +145,7 @@ export default (editor, opts = {}) => {
           icons.fontColor ||
           '<b style="pointer-events:none;border-bottom:2px solid">A</b>'
         }
-      <div id="foreColor-picker"
+      <div id="foreColor-picker-${editor.Config.container.replace("#", "")}"
           class="${
             options.darkColorPicker
               ? "rte-color-picker dark"
@@ -157,8 +157,9 @@ export default (editor, opts = {}) => {
           title: "Font Color",
         },
         result: (rte) => {
-          if (!pk1)
-            pk1 = new Piklor(
+          const pikerEle = `#foreColor-picker-${editor.Config.container.replace("#", "")}`;
+          if (!pk1[pikerEle])
+            pk1[pikerEle] = new Piklor(
               "#foreColor-picker",
               options.fonts.fontColor
                 ? Array.isArray(options.fonts.fontColor)
@@ -170,10 +171,10 @@ export default (editor, opts = {}) => {
                 closeOnBlur: true,
               }
             );
-          pk1.colorChosen((col) => rte.exec("foreColor", col));
+          pk1[pikerEle].colorChosen((col) => rte.exec("foreColor", col));
         },
       });
-    let pk2 = null;
+    let pk2 = {};
     options.fonts &&
       options.fonts.hilite &&
       rte.add("hiliteColor", {
@@ -181,7 +182,7 @@ export default (editor, opts = {}) => {
           icons.hiliteColor ||
           '<b style="pointer-events:none;" class="rte-hilite-btn">A</b>'
         }
-      <div id="hilite-picker"
+      <div id="hilite-picker-${editor.Config.container.replace("#", "")}"
         class="${
           options.darkColorPicker
             ? "rte-color-picker dark"
@@ -193,8 +194,9 @@ export default (editor, opts = {}) => {
           title: "Font Highlight",
         },
         result: (rte) => {
-          if (!pk2)
-            pk2 = new Piklor(
+          const pikerEle = `#hilite-picker-${editor.Config.container.replace("#", "")}`;
+          if (!pk2[pikerEle])
+            pk2[pikerEle] = new Piklor(
               "#hilite-picker",
               options.fonts.hilite
                 ? Array.isArray(options.fonts.hilite)
@@ -206,7 +208,7 @@ export default (editor, opts = {}) => {
                 closeOnBlur: true,
               }
             );
-          pk2.colorChosen((col) => rte.exec("hiliteColor", col));
+          pk2[pikerEle].colorChosen((col) => rte.exec("hiliteColor", col));
         },
       });
     options.format &&
