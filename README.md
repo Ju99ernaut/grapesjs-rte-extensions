@@ -206,25 +206,19 @@ $ cd grapesjs-rte-extensions
 Install dependencies
 
 ```sh
-$ npm i
-```
-
-Build css
-
-```sh
-$ npm run build:css
+$ pnpm i
 ```
 
 Start the dev server
 
 ```sh
-$ npm start
+$ pnpm start
 ```
 
 Build the source
 
 ```sh
-$ npm run build
+$ pnpm run build
 ```
 
 
