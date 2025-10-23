@@ -1,8 +1,11 @@
 {
   "name": "grapesjs-rte-extensions",
-  "version": "1.0.12",
+  "version": "1.0.13",
   "description": "Grapesjs built-in rte extension",
-  "main": "dist/grapesjs-rte-extensions.min.js",
+  "main": "dist/index.js",
+  "files": [
+    "dist/"
+  ],
   "repository": {
     "type": "git",
     "url": "https://github.com/Ju99ernaut/grapesjs-rte-extensions.git"
